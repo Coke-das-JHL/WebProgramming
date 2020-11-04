@@ -14,31 +14,30 @@
     //	
     // cookie로 접근횟수를 저장 출력
    boolean ct_chrome=false;		//cookie생성여부판별
-	boolean ct_fire=false;		//cookie생성여부판별  
-   boolean isIDShow = false;   // ID 저장내용
+   boolean ct_fire=false;		//cookie생성여부판별  
+   boolean isIDShow = false;   		// ID 저장여부 체크
    String id = null;
    Cookie[] cookies = request.getCookies();  // 요청전송된 모든 쿠키 얻어오기 
    if (cookies != null && cookies.length > 0) {
       for (int i = 0 ; i < cookies.length ; i++) {
          if (cookies[i].getName().equals("id")) {  //id 쿠키가 존재하는 경우
             isIDShow = true;
-            id = cookies[i].getValue();			  //쿠키에 저장된 아이디를 출력해줌
+            id = cookies[i].getValue();	  	    //쿠키값을 읽어옴
          }
-         if(browser.equals("Chrome")){ 			  //브라우저가 크롬인 경우
-         	if (cookies[i].getName().equals("count_chrome")){ //쿠키가 존재하는 경우
+         if(browser.equals("Chrome")){ 			  		//브라우저가 크롬인 경우
+         	 if (cookies[i].getName().equals("count_chrome")){ 	//쿠키가 존재하는 경우
         		ct_chrome=true;
-         	   //string값을 int형으로 변환하여 받음
-        	 	int temp = Integer.parseInt(cookies[i].getValue());
+         	   	int temp = Integer.parseInt(cookies[i].getValue()); //string값을 int형으로 변환하여 받음
         	 	temp = temp+1;
         	 	out.print("접근 횟수   " + temp);
-        	 	//같은 이름의 쿠키 카운터 증가한 값을 string으로 변경하여 덮어 씌움
+        	 	//같은 이름의 쿠키 카운터 증가한 값을 string으로 변경하여 덮어 씌움: 같은 name을 사용!
         	 	Cookie cook = new Cookie("count_chrome", Integer.toString(temp));  
         	 	response.addCookie(cook);	   
          	}
-			if(!ct_chrome){ //쿠키가 존재하지 않는 경우 -> 생성
-				out.print("접근 횟수   1");
-       		Cookie cookie = new Cookie("count_chrome", "1");  // date 쿠키 생성
-       		response.addCookie(cookie);
+		if(!ct_chrome){ //쿠키가 존재하지 않는 경우 -> 생성
+			out.print("접근 횟수   1");
+       			Cookie cookie = new Cookie("count_chrome", "1");  // date 쿠키 생성
+       			response.addCookie(cookie);
        		}
          }
         if(browser.equals("Firefox")){ //브라우저가 파이어폭스인경우
@@ -47,7 +46,7 @@
      	 	int temp = Integer.parseInt(cookies[i].getValue());
      	 	temp = temp+1;
      	 	out.print("접근 횟수   " + temp);
-     	// 같은 이름의 쿠키 카운터 증가한 값으로 덮어 씌움
+     		// 같은 이름의 쿠키 카운터 증가한 값으로 덮어 씌움
      	 	Cookie cook = new Cookie("count_fire", Integer.toString(temp));  
      	 	response.addCookie(cook);	   
       		}
