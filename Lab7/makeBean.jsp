@@ -9,4 +9,5 @@
     member.setEmail("hong@aaa.bbb.com");
     member.setRegisterDate(new Date());
 %>
+<!-- forward: request scope 까지 Attribute 유지 -->
 <jsp:forward page="useBean.jsp" />
