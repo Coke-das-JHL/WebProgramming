@@ -10,7 +10,7 @@ public class person{
 	}
 }
 %>
-<%     // web.xml에 적혀있는 application paramter read -> application.getInitParamter("name");
+<%     // web.xml에 적혀있는 application paramter read -> application.getInitParamter("name")
 		//<context-param>
 		//<param-name>MasterID</param-name>
 		//<param-value>jspbook</param-value>
@@ -20,7 +20,8 @@ public class person{
 		//<param-name>MasterPassword</param-name>
 		//<param-value>112233</param-value>
 		//</context-param>
-
+      
+      // application 활성범위: 서버 시작 ~ 종료
       String storedID = application.getInitParameter("MasterID"); 
       String storedPW = application.getInitParameter("MasterPassword"); 
       String id = request.getParameter("id");
