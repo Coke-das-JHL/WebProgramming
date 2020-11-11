@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <%  //페이지 접근을 위해 무조건 pamameter를 넘겨주어야 함 
+    // ~/Lab9-1/home.jsp?tartget=home
+    // ~/Lab9-1/home.jsp?tartget=info
+    // ~/Lab9-1/home.jsp?tartget=music
 String targetPage=request.getParameter("target") + "2.jsp";
 %>
 
