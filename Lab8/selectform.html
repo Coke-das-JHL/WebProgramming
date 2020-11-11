@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>selectform</title>
+</head>
+<body>
+학번과 이름 및 나이와 전공을 입력하세요.
+<form action="result.jsp" method="post">
+<table border=1>
+<tr>
+<td>ID: </td>
+<td>
+<input type="text" name="ID">
+</td>
+</tr>
+<tr>
+<td>Name: </td>
+<td>
+<input type="text" name="name"></td>
+</tr>
+<tr>
+<td>Age: </td>
+<td>
+<input type="text" name="age"></td>
+</tr>
+<tr>
+<td>Major: </td>
+<td>
+<select name="major" >
+<option>Computer</option>
+<option>Science</option>
+<option selected>Math</option>
+<option>Soccer</option>
+<option>basketball</option>
+<option>music</option>
+</select>
+</td>
+</tr>
+</table>
+<input type="submit" value="전송" name="submitbtn">
+<input type="reset" value="초기화" name="resetbtn">
+</form>
+</body>
+</html>
+
