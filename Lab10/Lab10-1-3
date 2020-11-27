@@ -1,0 +1,52 @@
+<SCRIPT LANGUAGE="JavaScript">
+	//Array 선언. new Array. 각기 다른 자료형 담을 수 있음
+    var Language = new Array("HTML", "JavaScript", "JSP", "ASP");
+    document.write("<B> sort() 메소드 </B><br>");
+    Language.sort(); 								//정렬
+    for(i = 0; i < Language.length; i++) document.write(Language[i] + " ");
+    document.write("<br>");
+    
+    document.write("<B> reverse() 메소드 </B><br>");      
+    Language.reverse(); 								//뒤집기 
+    for(i = 0; i < Language.length; i++) document.write(Language[i] + " ");
+    document.write("<br>");
+    
+    document.write("<B> join() 메소드 </B><br>");          
+    var str = Language.join(" : "); 				//인수로 넣은 문자를 원소 사이에 넣어서 하나의 문자열로 묶어서 반환
+    document.write(str+"<br>");
+    
+    document.write("<B> concat() 메소드 </B><br>");      
+    Language = Language.concat(new Array("C", "C++", "JAVA")); //두개의 배열 연결
+    for(i = 0; i < Language.length; i++) document.write(Language[i] + ", ");
+    document.write("<br>");
+    
+    document.write("<B> slice() 메소드 </B><br>");      
+    Language = Language.slice(1,5); 								//부분 잘라내기 
+    for(i = 0; i < Language.length; i++) document.write(Language[i] + " ");
+    document.write("<br>");
+    
+    Language = new Array("HTML", "JavaScript", "JSP", "ASP");
+    document.write("<B> 처음 데이터 </B><br>");      
+    for(i = 0; i < Language.length; i++) document.write(Language[i] + " ");
+    document.write("<br>");
+    
+    document.write("<B> 마지막 데이터 삭제 </B><br>");      
+    Language.pop(); 								//배열의 마지막 데이터 삭제
+    for(i = 0; i < Language.length; i++) document.write(Language[i] + " ");
+    document.write("<br>");
+    
+    document.write("<B> 마지막 데이터 삽입 </B><br>");
+    Language.push("JAVA");						//마지막 데이터 삽입
+    for(i = 0; i < Language.length; i++) document.write(Language[i] + " ");
+    document.write("<br>");
+    
+    document.write("<B> 처음 데이터 삭제 </B><br>");
+    Language.shift(); 							//배열의 처음 데이터 삭제
+    for(i = 0; i < Language.length; i++) document.write(Language[i] + " ");
+    document.write("<br>");
+    
+    document.write("<B> 처음 데이터 삽입 </B><br>");
+    Language.unshift("C++"); 					//배열의 처음 데이터 삽입
+    for(i = 0; i < Language.length; i++) document.write(Language[i] + " ");
+    document.write("<br>");
+</SCRIPT>
