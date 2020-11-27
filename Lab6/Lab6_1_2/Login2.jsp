@@ -1,7 +1,8 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <html>
 <head><title>로그인</title></head>
- <% //browser 판별을 위한 부분
+ <% 
+ 	//browser 판별을 위한 부분
  	//헤더파일을 읽어와서 Firefox인지 Chrome인지 판별 	
 	String browser = "";
 	String userAgent = request.getHeader("User-Agent");
@@ -11,7 +12,8 @@
   		browser = "Chrome";
  		}
 	out.print(browser);
-    //	
+    
+    
     // cookie로 접근횟수를 저장 출력
    boolean ct_chrome=false;		//cookie생성여부판별
    boolean ct_fire=false;		//cookie생성여부판별  
