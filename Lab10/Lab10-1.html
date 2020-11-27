@@ -1,0 +1,18 @@
+<SCRIPT LANGUAGE="JavaScript">
+	// 자료형은 var을 사용하지 않기도 함 -> 전역변수
+	// var을 사용하는 경우 변수의 scope 괄호 
+	
+    //사용자의 새로운 입력을 받을 수 있는 프롬프트 창을 띄움
+    //prompt는 window객체의 메소드
+	var intNum = prompt("숫자를 입력하세요"); 
+    var i=1;
+    while(i <= intNum){
+    	if( i %2 ==0 ){
+    		document.write(i+"짝수입니다. <BR>");	
+    	}else{
+    		document.write(i+"홀수입니다. <BR>");
+    	}
+        
+        i++;
+    }
+</SCRIPT>
