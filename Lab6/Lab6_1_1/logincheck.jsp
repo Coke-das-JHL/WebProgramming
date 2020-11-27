@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=utf-8" %>
-<%  // 세션의 MasterLoginID 속성 읽어옴
+<%  
+   // 세션의 MasterLoginID 속성 읽어옴
+   // Attribute의 경우 Value가 Object로 저장 형변환이 필수
+   
    String masterID = (String)session.getAttribute("MasterLoginID");  
    boolean isLogin = false;
    if (masterID != null) {
