@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<SCRIPT LANGUAGE="JavaScript">
+	function countdown(){
+		
+		var temp = document.getElementById("count").value;
+		document.getElementById("count").value = temp-1;
+	}
+</SCRIPT>
+</head>
+<body>
+<FORM NAME='form'>
+첫번째 프레임<p>
+이름: <INPUT TYPE="text" NAME="name"><BR>
+나이: <INPUT TYPE="text" NAME="age"><BR>
+테스트: <Input type="button" id="count" NAME="count" Value=100 onClick="countdown()">
+</FORM>
+</body>
+</html>
