@@ -1,0 +1,22 @@
+<SCRIPT LANGUAGE="JavaScript">
+//function을 통해 클래스 생성, 함수와 모호성이 존재
+function Human(strName, strAge, strJob)
+{
+    this.name = strName;
+    this.age = strAge;
+    this.job = strJob;
+}
+//차이점으로 new를 통해 객체 생성
+one = new Human("김지홍", "30", "프로그래머");
+two = new Human("신봉근", "32", "프로그래머");
+
+//document 객체는 웹페이지의 HTML요소에 접근하고자 할 때 사용
+//document.write: HTML 출력
+document.write("이름 : "+one.name+"<br>")
+document.write("나이 : "+one.age+"<br>")
+document.write("직업 : "+one.job+"<br><br>")
+
+document.write("이름 : "+two.name+"<br>")
+document.write("나이 : "+two.age+"<br>")
+document.write("직업 : "+two.job+"<br><br>")
+</SCRIPT>
