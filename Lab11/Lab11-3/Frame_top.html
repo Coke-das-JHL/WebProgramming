@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<SCRIPT LANGUAGE="JavaScript">
+	function countdown(){
+		//getElementById를 통해 HTML 문서의 객체를 가져올 수 있음
+		var temp = document.getElementById("count").value;
+		document.getElementById("count").value = temp-1;
+	}
+</SCRIPT>
+</head>
+<body>
+<FORM NAME='form'>
+첫번째 프레임<p>
+<SCRIPT LANGUANGE="JavaScript">
+document.write("프레임 개수: "+parent.frames.length+"<BR>");
+</SCRIPT>
+이름: <INPUT TYPE="text" NAME="name"><BR>
+나이: <INPUT TYPE="text" NAME="age"><BR>
+<!--  ID 태그를 작성해주어야 JavaScript의 getElementById로 얻을 수 있음 -->
+<Input type="button" id="count" NAME="count" Value=100 onClick="countdown()">
+</FORM>
+</body>
+</html>
