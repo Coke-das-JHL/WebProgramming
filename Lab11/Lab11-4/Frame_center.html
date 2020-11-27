@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function text_input()
+{  //부모 프레임을 통해 다른 프레임에 접근
+	var temp = parent.frames['frm1'].document.getElementById("count").value;
+	//현재 프레임의 버튼에 읽어온 값을 대입	
+	document.getElementById("count").value = temp;
+	//alert 창에 띄우기 위한 값들을 읽어와서 띄움
+	var strName=parent.frames['frm1'].document.form.name.value;
+	var strAge=parent.frames['frm1'].document.form.age.value;
+	alert("이름: "+strName+"\n"+"나이: "+strAge+"\n"+"테스트: "+temp); 
+}
+//-->
+</SCRIPT>
+</head>
+<body>
+두번째 프레임 <BR>
+<form name="form1">
+	<Input type="button" id="count" NAME="ccc" Value=100 onClick="text_input()">
+</form>
+</body>
+</html>
