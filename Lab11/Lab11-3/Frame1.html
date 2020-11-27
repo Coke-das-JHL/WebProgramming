@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Frame1</title>
+</head>
+<!-- Frame: window객체의 자식 객체로 브라우저내 모든 프레임에 대한 정보 
+	작은 window라고 생각, window객체와 속성 메소드 동일함
+-->
+<!-- Name을 지정해주어야함, frames[index or name] 으로 접근 가능 -->
+<FRAMESET COLS="60%,30%">
+   <FRAMESET ROWS="60%,30%">
+		<FRAME SRC="Frame_top.html" NAME="frm1">
+		<FRAME SRC="Frame_center.html" NAME="frm2">
+	</FRAMESET>
+	<FRAME SRC="Frame_center.html" NAME="frm3">
+</FRAMESET>
+<body>
+</body>
+</html>
