@@ -5,7 +5,7 @@
 <% 
 	//jsp 쿠키: 응답시간을 지속적으로 갱신하며 쿠키로 전송, cookie name은 date이다.
    out.print("<H2>JSP</H2>");
-   Cookie[] cookies = request.getCookies();						//request.getCookies() 모든 쿠키 얻어옴
+   Cookie[] cookies = request.getCookies();				//request.getCookies() 모든 쿠키 얻어옴
    if (cookies != null && cookies.length > 0) {
       for (int i = 0 ; i < cookies.length-1 ; i++) {    		//모든 쿠키값 출력
     	  	  out.print((i+1)+". ");
@@ -13,7 +13,7 @@
     		  out.print(cookies[i].getValue()+"<br>"); }
       Cookie cookie = new Cookie("date", new Date().toString());	//쿠키 객체 생성: name-value 모두 string
       response.addCookie(cookie);
-   }else{																	//쿠키 존재하지 않는 경우
+   }else{								//쿠키 존재하지 않는 경우
 	out.print(" 쿠키가 없습니다. <br> ");
    Cookie cookie = new Cookie("date", new Date().toString());  
    response.addCookie(cookie);
