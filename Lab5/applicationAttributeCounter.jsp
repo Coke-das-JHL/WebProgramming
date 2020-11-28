@@ -3,6 +3,9 @@
 <body>
 <center>
 <%
+//Attribute의 경우 value가 Object객체로 저장되기 때문에 반드시 형변환을 다시 해주야함
+// pageContext, session, requset, application만 가지고 있는 속성, 각각의 활성범위 숙지
+
 Integer count = (Integer)application.getAttribute("count");  // count 이름 값의 속성을 얻어온다.
 Integer newCount = null;
 if (count == null) {
