@@ -24,8 +24,8 @@
   </init-param>
 </servlet>
 
-<servlet-mapping>           								 매핑 정보
-  <servlet-name>readParamJSP</servlet-name>				 위의 서블릿 태그에서 같은 Servlet-name의 jsp-file의 출력 반환
+<servlet-mapping>           				매핑 정보
+  <servlet-name>readParamJSP</servlet-name>		 위의 서블릿 태그에서 같은 Servlet-name의 jsp-file의 출력 반환
   <url-pattern>/example1/readParam2.jsp</url-pattern>    이 주소로 접근한 경우만 Parameter사용가능
 </servlet-mapping>
 -->
