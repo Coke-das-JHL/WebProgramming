@@ -17,6 +17,12 @@ if (count == null) {
 %>
 방문자수 : <%= application.getAttribute("count") %>명
 <br>
+  <!-- request 기본객체
+      getParameterNames()
+	    getParameter(String name)
+	    getParameterValues(string name)
+	    getCookies()
+  -->
 <%= request.getRealPath("/") %> <br>  <!-- webapps까지 절대 경로 -->
 <%= request.getContextPath() %> <br>  <!-- /webapps_name 반환 -->
 <%= request.getRequestURI() %><br>	   <!-- webapps부터 그 이하의 주소-->
