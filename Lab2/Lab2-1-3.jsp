@@ -2,6 +2,7 @@
 <%!
 // Declaration: JSP 페이지 전체에서 활용할 변수 및 메소드를 선언, 세미콜론 필요!
 // 선언문을 통한 변수와 메소드는 JSP페이지를 위한 클래스의 멤버 변수, 메소드로 선언
+// Scriptlet이나 Expression의 경우 _jspService 메소드의 지역변수로 선언 
 String str="선언 예제";
 public double calculator(double num1,double num2,String operator){
 	double result=0.0;
