@@ -5,7 +5,7 @@
    //session.getCreationTime(): 세션 시작 시간 반환
    out.print("세션 지속 시간: "+ (session.getLastAccessedTime()-session.getCreationTime())+ "msec");
    session.invalidate();  // 세션의 무효화 -> 로그아웃
-   // session.removeAttribute("MasterLoginID")
+   // session.removeAttribute("MasterLoginID"). 로그인을 나타내는 특정 속성을 없애는 것도 가능
 %>
 <html>
 <head><title>로그아웃</title></head>
