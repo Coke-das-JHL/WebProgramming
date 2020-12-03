@@ -13,7 +13,8 @@
    response.addCookie(cookie2);
    // 쿠키는 사용자의 컴퓨터에 저장 -> 변경, 삭제 hard
    // 변경: 같은 이름을 가지는 쿠키를 전송
-   // 삭제: cookie.setMaxage(0); response.addCookie(cookie); 
+   // 삭제: cookie.setMaxAge(0); response.addCookie(cookie); 
+   // cookie.setMaxAge 초 단위 지정
 %>
 <html>
 <head><title>쿠키생성</title></head>
