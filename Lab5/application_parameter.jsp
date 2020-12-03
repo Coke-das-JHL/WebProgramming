@@ -5,9 +5,11 @@
 <% 
 String appName = application.getInitParameter("appName"); 
 String appVersion = application.getInitParameter("appVersion"); 
+String path=application.getRealPath("/"); 
+out.print(path +"<br>");  <!-- /home/jaehyeon/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/Lab5/-->
 %> 
-appName: <%= appName %><br/>
-appVersion: <%= appVersion %><br/>
+appName: <%= appName %><br/>          <!-- appName: jspbook  -->
+appVersion: <%= appVersion %><br/>    <!--appVersion: 1.0-->
 </body>
 </html>
 
@@ -15,6 +17,7 @@ appVersion: <%= appVersion %><br/>
 application 기본객체. 활성범위 서버의 시작과 종료 동일 webapps내에서 참조 가능
 
 getRealPath: Webapps까지 절대 경로
+getResource(String path): URL로 리턴
 getParameterNames()
 getInitParameter(String name)
 
