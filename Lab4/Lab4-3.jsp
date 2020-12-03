@@ -14,10 +14,10 @@ int sizeLimit = 5 * 1024 * 1024 ;
 //파일업로드가 이루어지는 시점.!!!
 MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8",new DefaultFileRenamePolicy());     
 
-// 다시 읽어와서 출력하기 위한 과정
-File file = multi.getFile("upfile");  
-String fileName=file.getName(); 
-long fileSize=file.length();
+// 업로드가 정상적으로 이루어졌는지 체크
+File file = multi.getFile("upfile");  <!-- input 파일태그의 name -->
+String fileName=file.getName();       <!-- 파일명 -->
+long fileSize=file.length();          <!-- 길이 -->
  
 if(fileName == null) {    
    out.print("파일 업로드 되지 않았음 (이유: 파일 사이즈 초과 등)");
@@ -28,6 +28,7 @@ if(fileName == null) {
 }
 out.print(savePath+"<br>");
 %>
+<!-- 저장한 이미지 다시 출력 -->
 <img src="map.jpg"> 
 </body>
 </html>
