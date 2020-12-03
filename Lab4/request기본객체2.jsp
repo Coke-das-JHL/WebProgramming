@@ -43,3 +43,5 @@
 </center>
 </body>
 </html>
+
+<!-- response 객체. cookie, sendRediect() 제어 흐름에서 언급 -->
