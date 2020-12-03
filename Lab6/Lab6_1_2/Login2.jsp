@@ -2,6 +2,8 @@
 <html>
 <head><title>로그인</title></head>
  <% 
+ 	// 세션은 웹 브라우저 각각에 대응하여 서로 다른 세션이 생성
+
  	//browser 판별을 위한 부분
  	//헤더파일을 읽어와서 Firefox인지 Chrome인지 판별 	
 	String browser = "";
