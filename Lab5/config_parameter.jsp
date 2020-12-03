@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8"%>
 
-<!--  config 기본 객체: Servlet마다 config 기본 객체가 생성  
+<!--  config 기본 객체: Servlet(페이지)마다 config 기본 객체가 생성  
 	getInitParameterNames()
 	getInitParameter(String name)
 	getServletContext() : 기본 객체 반환
@@ -24,7 +24,7 @@
   </init-param>
 </servlet>
 
-<servlet-mapping>           				매핑 정보
+<servlet-mapping>           				 매핑 정보
   <servlet-name>readParamJSP</servlet-name>		 위의 서블릿 태그에서 같은 Servlet-name의 jsp-file의 출력 반환
   <url-pattern>/example1/readParam2.jsp</url-pattern>    이 주소로 접근한 경우만 Parameter사용가능
 </servlet-mapping>
@@ -34,9 +34,9 @@
   String webMaster = null;
 
   public void jspInit() {
-    ServletConfig myConfig = getServletConfig();   //이렇게 사용할 수도 있고
-    emailHost = myConfig.getInitParameter("emailHost");
-    webMaster = myConfig.getInitParameter("webMaster");
+    ServletConfig myConfig = getServletConfig();  	 //이렇게 사용할 수도 있고
+    emailHost = myConfig.getInitParameter("emailHost");  //getInitParameter메소드를 통해 값 읽어옴
+    webMaster = myConfig.getInitParameter("webMaster");  //선언한 멤버메소드를 호출하지 않아도 아래 출력에서 정상적인 출력이 가능한 이유는?
   }
 %>
 <table border="1"> 
@@ -48,7 +48,7 @@
 <td>WebMaster</td>
 <td><%=webMaster%></td>
 </tr>
-</table>			<!-- 이렇게 사용할 수도 있음 -->		
-E-mail: <%=config.getInitParameter("e-mail")%>
+</table>			
+E-mail: <%=config.getInitParameter("e-mail")%>  <!-- 이렇게 사용할 수도 있음 -->		
 </body>
 </html>
