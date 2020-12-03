@@ -1,9 +1,13 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 
-<%  // 세션의 MasterLoginID 속성 읽어옴
-    // 세션에 로그인 기록이 있는지 읽음( loginProcess에 setAttrubute 존재) 
-    // 로그인 되어 있는데 정상적인 로그인 화면 출력되는 것을 방지
-    // Attribute -> name - Object로 저장, 활성범위 숙지
+<!-- 로그인 처리과정
+    1. 로그인 입력받기 2. 데이터베이스에 저장된 로그인 정보와 일치하면 session의 특정속성으로 기록 
+    3. 이후 각 서블릿에서는 로그인 정보가 존재하는지 검사하는 부분을 추가
+    4. 로그아웃하는 경우 session.invalidate(), 특정 속성을 지움으로서 세션을 종료가능함-->
+
+<%  // 세션의 MasterLoginID 속성 읽어옴 -> 이미 로그인되어있지 않은지
+    // 세션에 로그인 기록이 있는지 읽음(이번 예제는 context-Parameter로 ID,Pwd 저장해놓음 loginProcess에 setAttrubute 존재) 
+      
    String masterID = (String)session.getAttribute("MasterLoginID");  
    boolean isLogin = false;
    if (masterID != null) {
