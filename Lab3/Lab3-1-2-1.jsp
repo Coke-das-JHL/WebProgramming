@@ -15,6 +15,7 @@ Password: <input type="password" name="pw"><br/>
 <!-- select와 textarea의 경우 input 태그에 포함되지 않음 -->
 <textarea name="desc" cols="50" rows="4"> </textarea> <br/>
 <center>
+<!-- submit, reset의 경우 value값이 버튼 위에 쓰임 -->
 <input type="submit" value="전송" name="submitbtn">
 <input type="reset" value="초기화" name="resetbtn">
 </center>
