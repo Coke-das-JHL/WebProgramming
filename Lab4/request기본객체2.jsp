@@ -9,16 +9,16 @@
 <h2>Request Form 처리 - 1</h2>
 <hr> 
 <table border=1 cellspacing="1" cellpadding="5">
-<tr><td>이름</td><td><%=request.getParameter("username")%></td></tr>
+<tr><td>이름</td><td><%=request.getParameter("username")%></td></tr>  <!-- 입력값을 String으로 읽어옴 -->
 <tr><td>직업</td><td><%=request.getParameter("degree")%></td></tr>
 <tr><td>관심분야</td>
 <td>
 <%
-  String favorites[] = request.getParameterValues("favorite");
+  String favorites[] = request.getParameterValues("favorite");  //입력값을 String배열로 읽어옴
   for(int i=0; i<favorites.length;i++) {
     out.println(favorites[i]+"<BR>");
   }
-  for(String favorite:favorites) {
+  for(String favorite:favorites) {    // 향상된 for문도 사용 가능
     out.println(favorite+"<BR>");
   }
 %>
@@ -32,12 +32,12 @@
 2. 요청 메서드: <%= request.getMethod() %> <br/>
 3. 프로토콜: <%= request.getProtocol() %> <br/>
 4. 서버 호스트 이름: <%= request.getServerName() %> <br/>
-5. 서버 포트: <%= request.getServerPort() %> <br/>
-6. 요청 URI: <%= request.getRequestURI() %> <br/>
-7. 요청 URL: <%= request.getRequestURL() %> <br/>
+5. 서버 포트: <%= request.getServerPort() %> <br/>                <!-- Ex https://localhost:8081/jspbook/Lab/example.jsp -->
+6. 요청 URI: <%= request.getRequestURI() %> <br/>                <!-- 호스트 이름 이후의 내용이 return  /Lab/example.jsp-->
+7. 요청 URL: <%= request.getRequestURL() %> <br/>                <!-- 요청 URL전체가 return https://localhost:8081/jspbook/Lab/example.jsp--> 
 8. 요청 URL중 쿼리 스트링: <%= request.getQueryString() %> <br/>
-9. 컨텍스트 패스 정보: <%= request.getContextPath() %> <br/>
-10. Referer: <%= request.getHeader("referer") %>
+9. 컨텍스트 패스 정보: <%= request.getContextPath() %> <br/>        <!-- webapps폴더 까지만 출력 /jspbook -->
+10. Referer: <%= request.getHeader("referer") %>                <!-- 헤더의 referer정보를 읽어옴 해당 페이지를 호출한 URL -->
 </td></tr>
 </table>
 </center>
