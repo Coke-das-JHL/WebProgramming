@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8" %>
+<!-- import 지시문 (Java의 import와 동일)
+  Ex) page import="java.until.*, java.sql.*,java.io.BufferedReader" -->
 <%@ page import="java.util.*" %>
 <%
 String jspf_var="좋은 시간 되세요";%>
