@@ -24,10 +24,14 @@
    Cookie[] cookies = request.getCookies();  // 요청전송된 모든 쿠키 얻어오기 
    if (cookies != null && cookies.length > 0) {
       for (int i = 0 ; i < cookies.length ; i++) {
+      
          if (cookies[i].getName().equals("id")) {  //id 쿠키가 존재하는 경우
             isIDShow = true;
             id = cookies[i].getValue();	  	    //쿠키값을 읽어옴
          }
+	 
+	 
+	 
          if(browser.equals("Chrome")){ 			  		//브라우저가 크롬인 경우
          	 if (cookies[i].getName().equals("count_chrome")){ 	//쿠키가 존재하는 경우
         		ct_chrome=true;
@@ -44,6 +48,8 @@
        			response.addCookie(cookie);
        		}
          }
+	 
+	 
         if(browser.equals("Firefox")){ //브라우저가 파이어폭스인경우
       		if (cookies[i].getName().equals("count_fire")){
      	 	ct_fire=true;
@@ -68,13 +74,13 @@
 관리자 (Master)로 로그인하세요.<br/>
 <form action="loginProcess2.jsp" method="post">
 <%
-   if (isIDShow) {
+   if (isIDShow) {			//쿠키가 존재하는 경우
 %>
 ID : <input type="text" name="id" value="<%= id %>">
 <input type="checkbox" name="idstore" value="store" checked>아이디 기억하기
 </input><br/>
 <%
-   } else {
+   } else {				//쿠키 존재하지 않는 경우
 %>
 ID : <input type="text" name="id">
 <input type="checkbox" name="idstore" value="store">아이디 기억하기</input><br/>
