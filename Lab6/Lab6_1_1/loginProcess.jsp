@@ -1,7 +1,9 @@
 <%@ page contentType="text/html;charset=utf-8" %> 
 <%@ page import="java.util.Date" %>
 <%! 
-//로그인 기록을 저장하기 위한 클래스 이름과 Date 기록 저장 -> 객체를 Attribute로 저장함 => 뒤에서 Javabean을 통해 객체 저장
+//로그인에 성공하는 경우 사용자의 이름과 지난 로그인 기록을 출력하려고 함
+
+//로그인 기록을 저장하기 위한 클래스 이름과 Date 기록 저장 -> 객체를 Attribute로 저장함 => Lec12에서 JavaBean을 통해 객체 직렬화 저장
 public class person{
 	String name;
 	Date date;
@@ -23,7 +25,6 @@ public class person{
 		//</context-param>
       
       // application 활성범위: 서버 시작 ~ 종료
-      
       // web.xml의 application parameter를 읽어옴
       String storedID = application.getInitParameter("MasterID"); 
       String storedPW = application.getInitParameter("MasterPassword");
@@ -43,22 +44,23 @@ public class person{
       {            
       	 session.setAttribute("MasterLoginID", id);	//세션에 로그인 속성 저장  => Timer reset or 속성 제거로 로그인 세션 종료 가능
       								
-         // 로그인 성공시에 id를 name으로 하는 Attribute(사용자 이름과 로그인 기록)가 있는지 확인
+         // 로그인 성공시에 id를 name으로 하는 Attribute(사용자 이름과 로그인 기록)가 있는지 확인 => 첫 로그인과 로그인 이력이 있는지 구별
          person user =  (person)application.getAttribute(id);
          	// 있는경우 로그인 기록 출력
-         	if(user != null){  
+         	if(user != null)
+		{  
         		out.print("지난 로그인 기록<br>");
         		out.print(user.name + "<br>");
         		out.print(user.date.toString() + "<br>" );
         		//지난 로그인기록을 출력하고 로그인 기록을 갱신
        	 		application.setAttribute(id, new person(name,new Date()));
-       			}
-			else
-			{   
+       		}
+		else
+		{   
         	 	//없는 경우 첫로그인을 알리고 속성을 저장
         	 	out.print(" 첫 로그인<br> ");
         	 	application.setAttribute(id,new person(name,new Date()));
-         		}
+         	}
 	%>
    	<html>
    	<head><title>로그인 처리</title></head>
@@ -77,7 +79,7 @@ public class person{
    	<%
       	} else {   // 아이디 불일치
    	%>
-   	<script>
+   	<script>  <!-- javaScript의 alert, history객체 -->
    	alert("로그인 ID가 다릅니다.");
    	history.go(-1);
    	</script>
