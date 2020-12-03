@@ -1,3 +1,5 @@
+<!-- request 기본객체 -->
+
 <%@ page contentType="text/html;charset=utf-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <html>
