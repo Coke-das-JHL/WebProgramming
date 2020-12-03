@@ -24,5 +24,5 @@ isAutoFlush(): 자동 버퍼 출력?
 buffer는 page 지시문과 관련 있음 
 %@ page buffer="4kb" % 
 %@ page buffer="none" %  => jsp:forward 태그 사용불가능
-%@ page autoFlush="true"%
+%@ page autoFlush="true"%  -> out.isAutoFlush로 확인 가능
 -->
