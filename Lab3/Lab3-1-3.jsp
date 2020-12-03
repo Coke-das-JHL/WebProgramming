@@ -10,6 +10,7 @@ String end ="]";
 %>
 현재의 날짜와 시각은 
 <!-- include지시문: 지정한 파일의 내용을 그대로 현재 위치에 삽입시킨 후 Java파일로 변환 -->
+<!-- jsp:include 액션태그의 경우 제어 흐름이 아예 이동 -->
 <%@ include file="date.jspf" %>    
 입니다.
 <br/>
