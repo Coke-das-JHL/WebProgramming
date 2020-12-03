@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
-<!-- 지시문의 종류 page, import, include -->
+<!-- 지시문의 종류 page 속성="속성값", import=" ~ ", include file=" ~ " -->
 
 <!-- page 지시문: <%@ page 속성1="속성값1" ... %> 
 속성값 예시: contentType, pageEncoding, import(사용할 Java패키지나 클래스 지정, buffer(사이즈), autoflush(true/false), session(true/false) ...
