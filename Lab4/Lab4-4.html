@@ -4,19 +4,24 @@
   <title>인코딩 방식의 차이점</title>
 </head>
 <body>
+<!-- post 전달 방식 default encoding type -->
 <h2>인코딩 방식: application/x-www-form-urlencoded</h2>
 <form action="upload.jsp" method="post"> 
 Name: <input type="text" name="name"> <br>
 Age: <input type="text" name="ag	e"> <br>
+<!-- 파일 업로드를 인풋 태그 ,자동으로 파일 찾아보기 버튼이 생김--> 
 File: <input type="file" name="file"> <br>
 <input type="submit" value="SUBMIT">
 </form>
 
 <hr/>
+<!-- post 전달 방식, 파일 업로드를 위한 enctype 설정  -->
 <h2>인코딩 방식: multipart/form-data</h2>
+<!-- enctype 설정 -->
 <form action="upload.jsp" method="post" enctype="multipart/form-data">
 Name: <input type="text" name="name"> <br>
 Age: <input type="text" name="age"> <br>
+<!-- 파일 업로드를 인풋 태그 ,자동으로 파일 찾아보기 버튼이 생김-->
 File: <input type="file" name="file"> <br>
 <input type="submit" value="SUBMIT">
 </form>
