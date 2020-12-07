@@ -7,7 +7,7 @@
 function Output(){
 	var strInfo="당신의 취미는 \n";
 	for(i=0; i<box.check.length; i++){
-		if(box.check[i].checked)
+		if(box.check[i].checked)			//checkbox 체크여부 checked 속성확인
 			strInfo+=box.check[i].value;
 	}
 	strInfo+="입니다. \n";
