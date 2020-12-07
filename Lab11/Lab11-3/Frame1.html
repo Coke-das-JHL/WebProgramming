@@ -17,3 +17,37 @@
 <body>
 </body>
 </html>
+
+<!-- 브라우저 내장 객체 
+
+Window(최상위 객체)
+	document: HTML요소에 접근, cookie, forms[], images[], write  ..
+	frame: 작은 window라고 생각
+	history: 브라우저 접근 기록
+	location: URL관련
+
+* window객체의 open/close VS document객체의 open/close
+window객체의 경우 문서를 열고 닫을 때 사용하지만 document객체의 경우 지정한 문서에 내용입력을 준비하거나 마무리할 때
+
+TEST.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<SCRIPT language="javascript">
+myWin=window.open("","popup_sample","width=400,height=300");
+myWin.document.open();
+myWin.document.write("<HTML><HEAD><TITLE>SAMPLE</TITLE></HEAD>");
+myWin.document.write("<BODY bgColor='gold'");
+myWin.document.write("</BODY></HTML>");
+myWin.document.close();
+</SCRIPT>
+
+</body>
+</html>
+
+-->
+ 
