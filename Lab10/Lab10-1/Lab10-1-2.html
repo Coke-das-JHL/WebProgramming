@@ -1,12 +1,13 @@
 <SCRIPT LANGUAGE="JavaScript">
 //function을 통해 클래스 생성, 함수와 모호성이 존재
+//함수로 사용하는 경우 return type지정 X
 function Human(strName, strAge, strJob)
 {
     this.name = strName;
     this.age = strAge;
     this.job = strJob;
 }
-//차이점으로 new를 통해 객체 생성
+//객체 생성의 경우 차이점으로 new를 통해 객체 생성
 one = new Human("김지홍", "30", "프로그래머");
 two = new Human("신봉근", "32", "프로그래머");
 
