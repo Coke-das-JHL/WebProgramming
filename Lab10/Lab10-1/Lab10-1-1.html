@@ -1,18 +1,39 @@
+<!-- 자바 스크립트: 사용자에게 동적 웹페이지를 제공 -->
+<!-- 자바 애플릿: 서버에서 컴파일 된수 클라이언트에서 수행. 소스코드에 대한 보안 유지
+	VS
+     자바 스크립트: 클라이언트에서 해석됙 실행, 소스코드에 대한 보안 X -->
+<!-- *외부 파일 호출하는 경우    <SCRIPT SRC="ScriptName.js"></SCRIPT> -->
+
 <SCRIPT LANGUAGE="JavaScript">
 	// 자료형은 var을 사용하지 않기도 함 -> 전역변수
-	// var을 사용하는 경우 변수의 scope 괄호 
+	// var을 사용하는 경우 변수의 scope는 괄호!! 
+	// 자동으로 값에 따라 형변환이 수행됨
 	
-    //사용자의 새로운 입력을 받을 수 있는 프롬프트 창을 띄움
-    //prompt는 window객체의 메소드
+	/* function foo(){
+    		var x = "foo";
+    		console.log("foo : " + x);
+	}
+
+	function bar(){
+    		x = "bar";
+    		console.log("bar : " + x);
+	}
+	foo();	    -> foo 출력
+	bar();	    -> bar 출력
+	console.log("global : " + x);  -> bar 출력
+	*/
+
+    	//사용자의 새로운 입력을 받을 수 있는 프롬프트 창을 띄움
+    	//prompt는 window객체(최상위 객체)의 메소드
 	var intNum = prompt("숫자를 입력하세요"); 
-    var i=1;
-    while(i <= intNum){
-    	if( i %2 ==0 ){
+    	var i=1;
+    	while(i <= intNum){
+    	if( i %2 ==0 ){ 
+		// document객체 -> webpage
     		document.write(i+"짝수입니다. <BR>");	
     	}else{
     		document.write(i+"홀수입니다. <BR>");
     	}
-        
         i++;
-    }
+    	}
 </SCRIPT>
