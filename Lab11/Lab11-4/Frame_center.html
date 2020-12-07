@@ -6,7 +6,9 @@
 <SCRIPT LANGUAGE="JavaScript">
 <!--
 function text_input()
-{  //부모 프레임을 통해 다른 프레임에 접근
+{  	//부모 프레임을 통해 다른 프레임에 접근
+	// 다른 프레임 접근하는 방법 parent.frames[index] / parent.frame["name"]
+	// frame(window와 비슷함) 아래의 HTML 객체에 접근
 	var temp = parent.frames['frm1'].document.getElementById("count").value;
 	//현재 프레임의 버튼에 읽어온 값을 대입	
 	document.getElementById("count").value = temp;
