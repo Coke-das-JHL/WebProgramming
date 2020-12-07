@@ -22,9 +22,16 @@
 
 Window(최상위 객체)
 	document: HTML요소에 접근, cookie, forms[], images[], write  ..
+
 	frame: 작은 window라고 생각
-	history: 브라우저 접근 기록
-	location: URL관련
+
+	history: 브라우저 접근 기록: 앞, 뒤이동 가능 but URL 자체를 가져올 수는 없음 
+		history.back() history.forward()메소드를 버튼의 이벤트 핸들러로 등록
+		<INPUT type="button" onClick="history.back()" Value="뒤로 가기">
+
+	location: 현재 브라우저에 열려진 문서의 URL관련 정보. 
+		location.replace() / location.reload() 메소드를 버튼의 이벤트 핸들러로 등록
+		<INPUT type="button" Value="다시로드" onClick="location.replace("https:// ~~)">
 
 * window객체의 open/close VS document객체의 open/close
 window객체의 경우 문서를 열고 닫을 때 사용하지만 document객체의 경우 지정한 문서에 내용입력을 준비하거나 마무리할 때
