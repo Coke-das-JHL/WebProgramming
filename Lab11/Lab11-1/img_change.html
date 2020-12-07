@@ -1,16 +1,20 @@
+<!-- 이벤트 핸들링 -->
+<!-- onMouseDown / onMouseMove / onMouseOut / onMouseOver / onMouseUp / onDbClick / onDragDrop  .... -->
+
+<!-- 이미지 객체 <IMG SRC="이미지URL" NAME="~">에 의해 생성되는 객체: NAME태그를 반드시 지정해야 접근 가능
+     images["name"], images[index]로도 접근 가능 -->
+
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Image 객체</title>
 <SCRIPT LANGUAGE="JavaScript">
 <!-- 
-	//자바 스크립트의 event handler function
+	//event handler function
 	function imageChange(path){
-				//document.images['image'].src=path;
-				document.image.src=path;
+			//document.images['image'].src=path;
+			document.image.src=path;
 	}
-	//image객체 Document의 자식객체로 문서내의 이미지에 대한 정보, images[i]로도 접근 가능
-	//＊<IMG> 태그의 name필드를 반드시 지정해줘야 자바스크립트에서 접근 가능함
 //-->
 </SCRIPT>
 </head>
@@ -18,6 +22,7 @@
 <SCRIPT LANGUAGE="JavaScript">
 document.write("이미지 개수:" + (document.images.length+1)+"<br>");
 </SCRIPT>
+				   <!-- 벤트 핸들러 등록 -->
 <IMG NAME="image" SRC="bird1.jpg" onMouseOver=imageChange("bird2.jpg") onMouseOut=imageChange("bird1.jpg")>
 </body>
 
