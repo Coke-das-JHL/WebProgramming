@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<SCRIPT language="JavaScript">
+// 같은 document에 속해있으므로 document 생략하고 form name으로 바로 접근 가능
+function Output(){
+	var strInfo="당신의 취미는 \n";
+	for(i=0; i<box.check.length; i++){
+		if(box.check[i].checked)
+			strInfo+=box.check[i].value;
+	}
+	strInfo+="입니다. \n";
+	alert(strInfo);
+}
+function uncheck()
+{	
+	alert("do not check music");
+	if(box.check[2].checked)
+		box.check[2].checked=false; //uncheck로 바꿈
+}
+</SCRIPT>
+</head>
+<body>
+<!-- form객체는 Document객체의 하위 객체로 자바스크립트로 접근 가능 -->
+<!-- document.form_name.element[i] or document.form_name.InputName으로 접근 가능 -->
+<!-- 이벤트 핸들러 루틴: onSubmit(입력정보 전송하기 전에 처리해야 할 루틴이 있다면...)
+                     onReset등록 가능 -->
+                     
+<form name="box" onSubmit="Output()">
+<!--  모두 같은 이름으로 지정한 경우 배열로 접근 가능 -->
+<input type="checkbox" name="check" value="게임">1. 게임<br>
+<input type="checkbox" name="check" value="독서">2. 독서<br>
+<!--  3번은 체크하지 못하게 함 -->
+<input type="checkbox" name="check" value="음악감상" onClick="uncheck()">3. 음악감상<br>
+<input type="checkbox" name="check" value="영화감상">4. 영화감상<br>
+<input type="checkbox" name="check" value="축구">5. 축구<br>
+<input type="submit" value="선택" name="submission"><br> 
+</form>
+</body>
+</html>
