@@ -1,0 +1,6 @@
+* FileUpload객체 
+
+Input태그의 type속성값으로 file을 입력하여 만든 파일 업로드 버튼에 접근할 때 상ㅇ
+
+<Input Type="file" Name=" name">
+속성: name/value
