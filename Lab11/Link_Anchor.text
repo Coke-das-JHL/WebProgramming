@@ -1,0 +1,13 @@
+
+
+*Link객체
+Image객체와 마찬가지로 document객체의 하위객체로 텍스트나 이미지의 링크정보 담고 있음
+<A HERF="전체URL"> 태그 -> HTML 출력으로 링크 생김
+links[]로 접근 가능 -> links[i].pathname / links[i].herf ... 등
+
+*Anchor 객체
+document의 하위 객체 <A>태그의 정보를 담고 있음  -> HTML 출력으로 이동할 수 있게 됨 / 태그에 HREF속성이 포함된 경우 LINK객체가 됨
+document.AnchorName.attribute
+document.anchors[index]가 존재
+document.write("document.anchors[i].name");
+
