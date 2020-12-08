@@ -1,0 +1,38 @@
+
+*접속
+$ mysql -u root -p
+
+*SQL 명령문 맨 뒤에는 항상 세미콜런을 반드시 붙인다.
+
+$ show databases;                 //database목록 확인
+$ use databaseName;               //사용 database 변경
+
+$ CREATE DATABASE database_name   //dataBase 생성
+$ DROP DATABASE databaseName;     //database를 삭제
+
+$ CREATE TABLE table_name(column_name1, data_type1, ... );  //table 생성
+ Ex) CREATE TABLE Student(ID char(10) PRIMARY KEY, Name char(10), Age int);
+ 
+$ DROP TABLE table_name;                                    //table 삭제 
+
+$ ALTER TABLE table_name ADD column_name dataType;          //열 추가 
+ Ex) ALTER TABLE Student ADD Grade char(2);
+ 
+$ ALTER TABLE table_name DROP column_name;                  //열 삭제
+ Ex) ALTER TABLE Student DROP Grade;
+ 
+$ SELECT column_list FROM table_name [WHERE condition..];
+ Ex) SELECT * FROM Student;  
+     SELECT ID, Name FROM Student; 
+     SELECT ID FROM Student WHERE Age>=21 AND Age<=23;
+     
+$ INSERT INTO table_name[(column_list)] VALUES (column_values[]);     //레코드 삽입(행 삽입)
+ Ex) INSERT INTO Student (ID,Name,Age,Major) VALUES ('200910001', '김송이', 20, 'computer science');
+ 
+$ DELETE tableName [WHERE condition];                                 //레코드 삭제(행 삭제)
+
+$ UPDATE tableName SET columnName=value [WHERE condition..];
+  Ex) UPDATE Student SET Age=25 WHERE ID='200910003';
+
+ 
+ 
