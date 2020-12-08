@@ -20,6 +20,7 @@
     member.setRegisterDate(new Date());
 %>
 <!-- forward액션 태그: 하나의 JSP페이지에서 다른 JSP페이지로 요청 처리를 전달할 때 사용
+     요청 URL주소는 바뀌지 않음
      forward후의 page출력만 나타남 이전에 출력이 발생한 경우 forward불가능, 에러 
      request scope 까지 Attribute 유지 -->
 <jsp:forward page="useBean.jsp" />
