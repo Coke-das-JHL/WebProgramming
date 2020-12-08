@@ -12,7 +12,7 @@
 ID: <input type="text" name="id"> <br/>
 Password: <input type="password" name="pw"><br/>
 자기소개<br/>
-<!-- select와 textarea의 경우 input 태그에 포함되지 않음 -->
+<!-- select와 textarea의 경우 input 태그 포함되지 않음 -->
 <textarea name="desc" cols="50" rows="4"> </textarea> <br/>
 <center>
 <!-- submit, reset의 경우 value값이 버튼 위에 쓰임 -->
