@@ -1,0 +1,14 @@
+
+*response 객체: 사용자 요청에 대한 응답을 처리하기 위해서 사용함
+
+<cookie 관리>
+response.addCookie(cookie Cookie);
+<요청 흐름 제어>
+response.sendRedirect(url);
+
+EX)
+
+<%@ page=contentType="text/html;charset=utf-8"%>
+<% 
+  response.sendRedirect("http://www.daum.net");
+ %>
