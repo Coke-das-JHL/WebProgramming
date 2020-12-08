@@ -1,3 +1,8 @@
+<!-- 지시문 종류 %@  page(contentType, import,buffer,autoflush ...) , include
+      %@ page 속성1="속성값" import="~" ....
+      %@ include file="fileName" 
+-->
+
 <%@ page contentType="text/html;charset=utf-8" %>
 <html>
 <head>
