@@ -15,9 +15,9 @@ int sizeLimit = 5 * 1024 * 1024 ;
 MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8",new DefaultFileRenamePolicy());     
 
 // 업로드가 정상적으로 이루어졌는지 체크
-File file = multi.getFile("upfile");  <!-- input 파일태그의 name -->
-String fileName=file.getName();       <!-- 파일명 -->
-long fileSize=file.length();          <!-- 길이 -->
+File file = multi.getFile("upfile");  // input 파일태그의 name
+String fileName=file.getName();       // 파일명
+long fileSize=file.length();          // 길이 
  
 if(fileName == null) {    
    out.print("파일 업로드 되지 않았음 (이유: 파일 사이즈 초과 등)");
