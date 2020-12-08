@@ -1,0 +1,12 @@
+
+<jsp:forward page="page.jsp> 액션태그의 활용
+  해당 웹 어플리케이션 내부에 존재하는 페이지이어야 함
+  
+response.sendRedirect("page.jsp"); response객체의 활용
+  현재 JSP페이지와 전혀 관계없는 페이지도 설정 가능
+  
+<jsp:include page="page.jsp flush="true"> 액션태그의 활용
+  해당 웹 어플리케이션 내부에 존재하는 페이지이어야 함
+ 
+<%@ include file="include.jspf" %> include 지시문
+  해당 웹 어플리케이션 내부의 것만 가능, jsp,html파일이 아닌 간단한 text파일도 가능
