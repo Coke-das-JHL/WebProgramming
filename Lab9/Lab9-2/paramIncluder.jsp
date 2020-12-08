@@ -1,10 +1,10 @@
-paramIncluder.jsp
 <%@ page contentType="text/html;charset=utf-8" %>
 <html>
 <head><title>paramIncluder</title></head>
 <body>
 종류: 서적
 
+<!-- include를 통한 제어흐름을 하면서 request속으로 값 전달 가능 -->
 <jsp:include page="paramSub.jsp" flush="false"> 
   <jsp:param name="type" value="language" />   
 </jsp:include>
@@ -17,7 +17,6 @@ jsp: param 정보 확인 <br>
 </html>
 
 
-paramSub.jsp
 <%@ page contentType="text/html;charset=utf-8" %>
 <%
 String type = request.getParameter("type");   // type 파라미터 값 얻어오기
