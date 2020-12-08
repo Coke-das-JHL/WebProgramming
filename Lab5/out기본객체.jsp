@@ -3,7 +3,7 @@
 <head><title>out 기본 객체 사용</title></head>
 <body>
 1. out.print를 통한 출력 : <% out.print("print"); %> <br/>
-2. 설정된 버퍼크기 : <%= out.getBufferSize() %> <br/>              <!-- 8192 -->
+2. 설정된 버퍼크기 : <%= out.getBufferSize() %> <br/>             <!-- 8192 -->
 3. 남아있는 버퍼크기 : <%= out.getRemaining() %> <br/>             <!-- 8062 -->
 <% out.flush(); %>
 4. flush 후 남아있는 버퍼크기 : <%= out.getRemaining() %> <br/>    <!-- 8168 -->
