@@ -1,9 +1,8 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.io.*" %>
-<%  //자바 빈 객체에 저장하기 위해 하나의 선택된 전공을 하나의 String으로 만듦
-	// getParameterValues -> String[] 반환
-	// getParameterNames -> Enumeration 반환
+<%  
+	//자바 빈 객체에 저장하기 위해 하나의 선택된 전공을 하나의 String으로 만듦
 	String[] major = request.getParameterValues("majors");
 	String str="";
 	for(int i=0 ; i< major.length ; i++){
