@@ -26,8 +26,8 @@ Statement stmt = conn.createStatement();
 // stmt.executeUpdate(String sql) -> 데이터 추출이 없는 sql문 수행, 영향 받은 레코드 행 개수를 int형으로 반환
 ResultSet rs = stmt.executeQuery("SELECT count(*) AS recordCount FROM Student WHERE ID="+ID+";");   // ID 레코드 존재 확인
 
-while(rs.next()){
-   int recordCount = rs.getInt("recordCount");					//값을 읽어옴
+while(rs.next()){								//rs.next를 한 번 수행할 때마다 record를 한 행씩 이동
+   int recordCount = rs.getInt("recordCount");					//값을 읽어옴, getDataType(Sting columnName)으로 열 정보 확인 가능
    
    if( recordCount == 1){ 							//레코드 존재하는 경우
 	   Statement stmt2 = conn.createStatement();
@@ -48,3 +48,26 @@ stmt.close();
 %>
 </body>
 </html>
+
+
+<!-- ResultSet메타데이터
+ResultSetMeata md = rs.getMeatadata();
+int numColumns = md.getColumnCount();				// 열 개수 출력 field개수
+for(int i=1; i<=numColumns; l++){
+	out.println("Column Number = " + i );
+	out.println("Column Label = " + md.getColumnLabel(i) ); // index(1부터 시작)에 대한 필드 레이블을 출력
+	out.println("Column Number = " +md.getColumnName(i) );	// index(1부터 시작)에 대한 필드 이름을 출력
+	out.println("Column Number = " +md.getColumnTypeName(i) ); 
+}
+-->
+
+
+
+
+
+
+
+
+
+
+
