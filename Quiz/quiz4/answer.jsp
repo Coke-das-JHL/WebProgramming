@@ -3,7 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="jaehyeon.util.ConnectionContext" %>
 <%@ page import="java.sql.*" %>
-<%! boolean correctInput=false; %>
 <html>
 <head>
 <meta charset="UTF-8">
