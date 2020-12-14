@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="jaehyeon.util.ConnectionContext" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.util.*" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -18,16 +19,17 @@ function correctInput()
 </SCRIPT>
 </head>
 <body>
+
 <form name="question" method="POST" action="answer.jsp">
 <%
 Connection conn = ConnectionContext.getConnection();
 Statement stmt = conn.createStatement();
 
-int q1=100; //q1: 첫번째 제출된 문제 flag
-int q2=100; //q2: 두번째 제출된 문제 flag
-int r;
+int q1=100;
+int q2=100;
 boolean count=false;
-//3문제 데이터 베이스에서 뽑아 제출
+int r;
+//3문제
 for(int i=0;i<3;i++){
 	//중복방지
 	do{
@@ -38,13 +40,14 @@ for(int i=0;i<3;i++){
 	ResultSet rs= stmt.executeQuery("SELECT * FROM Quiz WHERE id="+r+";");
 	rs.next();
 	String quiz=rs.getString("question");
-	if(!quiz.equals("수도")){ 	//radio버튼
+	if(!quiz.equals("수도")){
+	//radio버튼
 	String choice1=rs.getString("choice1");
 	String choice2=rs.getString("choice2");
 	String choice3=rs.getString("choice3");
 	String choice4=rs.getString("choice4");
 	String answer =rs.getString("answer");
-	session.setAttribute(Integer.toString(i),answer);  // 문제의 정답을 Attribute로 저장
+	session.setAttribute(Integer.toString(i),answer);
 	out.print(quiz+"<br>");
 	%>
 	<Input type="radio" Name="a_<%= i%>" value="1"> <%=choice1 %>
@@ -52,8 +55,7 @@ for(int i=0;i<3;i++){
 	<Input type="radio" Name="a_<%= i%>" value="3"> <%=choice3 %>
 	<Input type="radio" Name="a_<%= i%>" value="4"> <%=choice4 %> <br>
 	<% } 
-	else{ //text field
-	%> 
+	else{ //text field%> 
 	한국의 수도는? <BR>
 	<Input type="text" Name="a_<%= i%>"> <br>
 	<%
