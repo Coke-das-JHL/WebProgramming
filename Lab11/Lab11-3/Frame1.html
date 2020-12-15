@@ -45,12 +45,12 @@ TEST.html
 </head>
 <body>
 <SCRIPT language="javascript">
-myWin=window.open("","popup_sample","width=400,height=300");
-myWin.document.open();
+myWin=window.open("","popup_sample","width=400,height=300");  // 새 창 열기: URL(비우면 빈 창), 문서이름, (옵션:크기) 
+myWin.document.open(); //내용입력 준비
 myWin.document.write("<HTML><HEAD><TITLE>SAMPLE</TITLE></HEAD>");
 myWin.document.write("<BODY bgColor='gold'");
 myWin.document.write("</BODY></HTML>");
-myWin.document.close();
+myWin.document.close(); //내용입력 
 </SCRIPT>
 
 </body>
