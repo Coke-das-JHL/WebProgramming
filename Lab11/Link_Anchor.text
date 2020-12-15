@@ -2,7 +2,7 @@
 
 *Link객체
 Image객체와 마찬가지로 document객체의 하위객체로 텍스트나 이미지의 링크정보 담고 있음
-<A HERF="전체URL"> 태그 -> HTML 출력으로 링크 생김
+<A HERF="전체URL">http://www....</A> 태그 -> HTML 출력으로 링크 생김
 links[]로 접근 가능 -> links[i].pathname / links[i].herf ... 등
 
 *Anchor 객체
