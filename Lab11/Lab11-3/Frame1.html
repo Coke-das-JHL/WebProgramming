@@ -5,7 +5,7 @@
 <title>Frame1</title>
 </head>
 <!-- Frame: window객체의 자식 객체로 브라우저내 모든 프레임에 대한 정보를 가지고 있음 
-	    작은 window라고 생각, window객체와 속성 메소드 동일함 -->
+	    작은 window라고 생각, window객체와 속성 메소드 동일함, length 속성으로 창이 몇 개의 프레임 구성인지 알 수  -->
 <!-- Name을 지정해주어야함, frames[index or name] 으로 접근 가능, length 속성으로 frame개수 알 수 있음 -->
 <FRAMESET COLS="60%,30%">
    	<FRAMESET ROWS="60%,30%">
@@ -25,8 +25,9 @@ Window(최상위 객체)
 
 	frame: 작은 window라고 생각
 
-	history: 브라우저 접근 기록: 앞, 뒤이동 가능 but URL 자체를 가져올 수는 없음 
-		history.back() history.forward()메소드를 버튼의 이벤트 핸들러로 등록
+	history: 브라우저 접근 기록: 앞, 뒤 이동 가능 but URL 자체를 가져올 수는 없음 
+		history.length: 저장된 기록 개수
+		history.back()==history.go(-1) history.forward()==history.go(+1) 메소드를 버튼의 이벤트 핸들러로 등록
 		<INPUT type="button" onClick="history.back()" Value="뒤로 가기">
 
 	location: 현재 브라우저에 열려진 문서의 URL관련 정보. 
